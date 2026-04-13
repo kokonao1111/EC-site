@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ZERO - ショッピングカート</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cursor-follower.js" defer></script>
+  <script src="loader.js" defer></script>
+  <script src="kaimono.js" defer></script>
+</head>
+<body class="cart-page-body">
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-circle">
+      <span>100</span>
+    </div>
+  </div>
+  <div class="page-transition" id="pageTransition">
+    <div class="page-transition-bg"></div>
+    <div class="page-transition-text">ZERO</div>
+  </div>
+<!-- ===== ヘッダー ===== -->
+<header class="header">
+  <div class="menu-icon" id="menuToggle">
+    <span></span><span></span><span></span>
+  </div>
+  <a href="index.html" class="logo">ZERO</a>
+
+  <div class="header-right">
+    <div class="search">
+      <label for="search-input">検索</label>
+      <input type="text" id="search-input">
+    </div>
+    <nav class="nav-links">
+      <a href="mai.html">マイアカウント</a>
+      <a href="herupu.html">ヘルプ</a>
+      <a href="kaimono.html">買い物かご [0]</a>
+      <a href="okiniiri.html">お気に入り</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== モーダルメニュー ===== -->
+<div class="modal-menu" id="modalMenu">
+  <div class="modal-menu-header">
+    <div class="modal-menu-close">
+      <button class="close-btn" id="closeMenu">×</button>
+    </div>
+  </div>
+  
+  <nav class="modal-menu-nav">
+    <a href="index.html">NEWS</a>
+    <a href="index.html">COLLECTION</a>
+    <a href="HAL_ZERO.html">ABOUT</a>
+    <a href="HAL_ZERO2.html">STORES</a>
+    <a href="saranimiru.html">ONLINE STORE <span class="external-icon">↗</span></a>
+  </nav>
+  
+  <div class="modal-menu-footer">
+    <div class="modal-social">
+      <a href="#">INSTAGRAM</a>
+      <a href="#">TWITTER</a>
+      <a href="#">TIKTOK</a>
+    </div>
+    <div class="modal-links">
+      <a href="#">CONTACT</a>
+      <span>/</span>
+      <a href="#">PRIVACY POLICY</a>
+    </div>
+    <div class="modal-copyright">
+      <p>Copyright ©ZERO Co., Ltd.</p>
+      <p>All rights reserved.</p>
+    </div>
+  </div>
+</div>
+  
+  <div class="cart-page">
+    <!-- カートが空の場合 -->
+    <div class="cart-empty-section" id="cartEmptySection">
+      <h1 class="cart-empty-title">バッグに商品がありません</h1>
+      <p class="cart-empty-description">サインイン アカウントに戻ってこれまでに追加した商品を見る</p>
+      
+      <div class="cart-empty-buttons">
+        <a href="mai.html" class="cart-btn cart-btn-outline">サインイン</a>
+        <a href="index.html" class="cart-btn cart-btn-filled">買い物を続ける</a>
+      </div>
+      
+       <p class="cart-help">
+         お困りですか? <a href="mailto:contact@zero.com" class="cart-help-link">Eメール</a>、またはお電話 <a href="tel:0120-3274-20" class="cart-help-link">0120-12-3456</a>
+       </p>
+    </div>
+    
+    <!-- カートに商品がある場合 -->
+    <div class="cart-items-section" id="cartItemsSection" style="display: none;">
+      <h1 class="cart-items-title">ショッピングバッグ</h1>
+      <div class="cart-items-container" id="cartItemsContainer">
+        <!-- カートアイテムはJavaScriptで動的に挿入されます -->
+      </div>
+      
+      <div class="cart-summary">
+        <div class="cart-summary-row">
+          <span class="cart-summary-label">小計</span>
+          <span class="cart-summary-value" id="cartSubtotal">¥0</span>
+        </div>
+        <div class="cart-summary-row">
+          <span class="cart-summary-label">合計</span>
+          <span class="cart-summary-value cart-total" id="cartTotal">¥0</span>
+        </div>
+        <button class="cart-checkout-btn">レジに進む</button>
+      </div>
+      
+      <div class="cart-continue-shopping">
+        <a href="index.html" class="cart-btn cart-btn-outline">買い物を続ける</a>
+      </div>
+    </div>
+    
+    <div class="cart-member-section">
+      <div class="cart-member-left">
+        <h2>すでに会員ですか?</h2>
+        <p class="cart-member-description">
+          サインインして、スムーズにご購入<a href="mai.html" class="cart-member-link">or今すぐ登録</a>
+        </p>
+      </div>
+      <div class="cart-member-right">
+        <a href="mai.html" class="cart-btn cart-btn-filled">サインイン</a>
+      </div>
+    </div>
+    
+    <!-- ===== レジ開発中モーダル ===== -->
+    <div class="checkout-dev-modal" id="checkoutDevModal">
+      <div class="checkout-dev-overlay"></div>
+      <div class="checkout-dev-content">
+        <p>レジ機能は現在開発中です。</p>
+        <button class="checkout-dev-close" id="checkoutDevClose">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== おすすめの商品セクション ===== -->
+  <section class="recommended-products-section">
+    <h1 class="recommended-products-title">おすすめの商品</h1>
+    <div class="recommended-products-container">
+      <a href="syouhinn1.html" class="recommended-product-link">
+      <div class="recommended-product-item">
+        <div class="product-image-wrapper">
+            <img src="images/hare24.png" alt="ボリューム フェイクレザージャケット">
+        </div>
+          <h2 class="product-name">フェイクレザーバック</h2>
+          <p class="product-price">¥ 8,590</p>
+      </div>
+      </a>
+
+      <a href="syouhinn1.html" class="recommended-product-link">
+      <div class="recommended-product-item">
+        <div class="product-image-wrapper">
+          <img src="images/hare.png" alt="ウール混紡ショート丈ダブルブレスト">
+        </div>
+          <h2 class="product-name">ダブルブレスト</h2>
+        <span class="stock-low">在庫少</span>
+          <p class="product-price">¥ 15,990</p>
+      </div>
+      </a>
+
+      <a href="syouhinn1.html" class="recommended-product-link">
+      <div class="recommended-product-item">
+        <div class="product-image-wrapper">
+            <img src="images/hare8.png" alt="プラットフォームスニーカー">
+        </div>
+          <h2 class="product-name">プラットスニーカー</h2>
+          <p class="product-price">¥ 6,590</p>
+      </div>
+      </a>
+
+      <a href="syouhinn1.html" class="recommended-product-link">
+      <div class="recommended-product-item">
+        <div class="product-image-wrapper">
+          <img src="images/hare6.png" alt="TRF ミッドライズ折り返しウエスト">
+        </div>
+          <h2 class="product-name">ミッドライズウエスト</h2>
+        <span class="stock-low">在庫少</span>
+          <p class="product-price">¥ 7,990</p>
+      </div>
+      </a>
+
+      <a href="syouhinn1.html" class="recommended-product-link">
+      <div class="recommended-product-item">
+        <div class="product-image-wrapper">
+          <img src="images/hare7.png" alt="アニマルジャカードニットカーディガン">
+        </div>
+          <h2 class="product-name">ジャカードカーディガン</h2>
+        <span class="stock-low">在庫少</span>
+          <p class="product-price">¥ 6,590</p>
+      </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- ===== フッター ===== -->
+<footer class="footer">
+  <nav class="footer-nav">
+    <a href="index.html">会社概要</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">ニュース</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">店舗情報</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">採用情報</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">当サイトのポリシー</a>
+    <span class="footer-divider">|</span>
+    <a href="herupu.html">お問い合わせ</a>
+  </nav>
+  
+  <div class="footer-logo">
+      <p class="footer-logo-text">ZERO</p>
+    <p class="footer-logo-subtitle">Japan 2026</p>
+  </div>
+  
+  <div class="footer-description">
+    <p>「ZERO」は日本で誕生した、プレミアムファッションブランドです。<br>
+    2025年の創業以来、世界中へファッションの美しさと幸せな時をお届けしています。</p>
+  </div>
+  
+  <div class="footer-social">
+    <a href="#" class="social-icon" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+        <circle cx="17" cy="7" r="1" fill="currentColor"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="X">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="Facebook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="YouTube">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    </a>
+  </div>
+  
+  <div class="footer-apps">
+    <a href="#" class="app-badge">
+      <div class="app-badge-content">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
+          <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.1 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-1.23.56-2.5 1.45-3.3 1.06-1.12 2.77-1.89 4.08-1.78.31 2.35-1.19 4.65-2.95 5.66-.88.5-1.96.74-2.58-.58z"/>
+        </svg>
+        <div class="app-badge-text">
+          <span class="app-badge-label">からダウンロード</span>
+          <span class="app-badge-name">App Store</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="app-badge">
+      <div class="app-badge-content">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
+          <path d="M3.111 1.5h13.778c.89 0 1.611.72 1.611 1.611v17.778c0 .89-.72 1.611-1.611 1.611H3.111c-.89 0-1.611-.72-1.611-1.611V3.111c0-.89.72-1.611 1.611-1.611zm0 1.611v17.778h13.778V3.111H3.111zm2.222 2.222h9.334v1.611H5.333V5.333zm0 3.222h9.334v8.89H5.333v-8.89z"/>
+        </svg>
+        <div class="app-badge-text">
+          <span class="app-badge-label">で手に入れよう</span>
+          <span class="app-badge-name">Google Play</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+

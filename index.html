@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ZERO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cursor-follower.js" defer></script>
+  <script src="loader.js" defer></script>
+  <style>
+    :root {
+      --collaboration-title-color: #fff; 
+    }
+  </style>
+</head>
+<body>
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-circle">
+      <span>100</span>
+    </div>
+  </div>
+  <div class="page-transition" id="pageTransition">
+    <div class="page-transition-bg"></div>
+    <div class="page-transition-text">ZERO</div>
+  </div>
+
+<!-- ===== ヘッダー ===== -->
+<header class="header">
+  <div class="menu-icon" id="menuToggle">
+    <span></span><span></span><span></span>
+  </div>
+  <a href="index.html" class="logo">ZERO</a>
+
+  <div class="header-right">
+    <div class="search">
+      <label for="search-input">検索</label>
+      <input type="text" id="search-input">
+    </div>
+    <nav class="nav-links">
+      <a href="mai.html">マイアカウント</a>
+      <a href="herupu.html">ヘルプ</a>
+      <a href="kaimono.html">買い物かご [0]</a>
+      <a href="okiniiri.html">お気に入り</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== モーダルメニュー ===== -->
+<div class="modal-menu" id="modalMenu">
+  <div class="modal-menu-header">
+    <div class="modal-menu-close">
+      <button class="close-btn" id="closeMenu">×</button>
+    </div>
+  </div>
+  
+  <nav class="modal-menu-nav">
+    <a href="index.html">NEWS</a>
+    <a href="HAL_ZERO.html">COLLECTION</a>
+    <a href="syouhinn1.html">ABOUT</a>
+    <a href="syouhinn1.html">STORES</a>
+    <a href="saranimiru.html">ONLINE STORE <span class="external-icon">↗</span></a>
+  </nav>
+  
+  <div class="modal-menu-footer">
+    <div class="modal-social">
+      <a href="#">INSTAGRAM</a>
+      <a href="#">x</a>
+      <a href="#">TIKTOK</a>
+    </div>
+    <div class="modal-links">
+      <a href="#">CONTACT</a>
+      <span>/</span>
+      <a href="#">PRIVACY POLICY</a>
+    </div>
+    <div class="modal-copyright">
+      <p>Copyright ©ZERO Co., Ltd.</p>
+      <p>All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 背景動画 & スライダー ===== -->
+<section class="hero">
+  <video class="video-bg" src="videos/hero-bg-web.mp4" autoplay muted loop playsinline></video>
+  
+  <div class="hero-slides">
+    <div class="slide active">
+      <div class="caption">
+        <h1 class="collaboration-title">ZERO / Nao kobayasi Collaboration</h1>
+        <p class="release-date-text">JUN 12, 2030発売</p>
+      </div>
+    </div>
+
+  <div class="arrow left" id="prevBtn"></div>
+  <div class="arrow right" id="nextBtn"></div>
+</section>
+
+<!-- ===== セクション：縦並びフェード写真 ===== -->
+<section class="photo-section">
+  <a href="HAL_ZERO.html" class="photo-link fade-in">
+    <img src="images/hare HALバージョン.png">
+  </a>
+  <a href="HAL_ZERO2.html" class="photo-link fade-in">
+    <img src="images/hare3.jpg">
+  </a>
+</section>
+
+
+<section class="syouhinn">
+<a href="saranimiru.html" class="slide-gif-link">
+  <img class="fade-in" src="images/スライド商品完成.gif">
+</a>
+</section>
+
+
+
+<!-- ===== HOLIDAY COLLECTION ===== -->
+<section class="collection">
+  <h1 class="collection-title">ホリデーシーズン セレクション</h1>
+
+  <div class="carousel">
+    <button class="nav prev" id="prev">‹</button>
+
+    <div class="carousel-track">
+      <div class="item">
+        <a href="syouhinn1.html">
+          <img src="images/hare1.png">
+        </a>
+      </div>
+      <div class="item">
+        <a href="syouhinn1.html">
+        <img src="images/hare2.png">
+        </a>
+      </div>
+      <div class="item">
+        <a href="syouhinn1.html">
+        <img src="images/hare3.png">
+        </a>
+      </div>
+      <div class="item">
+        <a href="syouhinn1.html">
+        <img src="images/hare4.png">
+        </a>
+      </div>
+      <div class="item">
+        <a href="syouhinn1.html">
+        <img src="images/hare5.png">
+        </a>
+      </div>
+      <div class="item">
+        <a href="syouhinn1.html">
+        <img src="images/hare6.png">
+        </a>
+      </div>
+      <div class="item">
+        <a href="syouhinn1.html">
+        <img src="images/hare7.png">
+        </a>
+      </div>
+      <div class="item">
+        <a href="syouhinn1.html">
+        <img src="images/hare8.png">
+        </a>
+      </div>
+
+    </div>
+
+    <button class="nav next" id="next">›</button>
+  </div>
+
+  <div class="item-info">
+    <p class="desc">ステンレススティール、イエローゴールド</p>
+    <p class="price">¥10,450</p>
+  </div>
+</section>
+
+<!-- ===== アウターセクション ===== -->
+<section class="outer-section">
+  <h1 class="outer-title">アウター</h1>
+  <p class="outer-description">日頃の日常におしゃれを入れることによってよりよい楽しい毎日を</p>
+  
+  <!-- ===== 画像セクション（左右配置） ===== -->
+  <section class="image-top-section">
+    <h2>        </h2>
+    <div class="image-top-left-wrapper">
+      <div class="image-top-left-1">
+        <img src="images/hareモデル２.jpg" alt="商品画像">
+        <button class="plus-btn view-more-trigger" data-product-set="1">
+          <span class="plus-icon">+</span>
+          <span class="plus-text">さらに見る</span>
+        </button>
+      </div>
+      <div class="image-top-left-2">
+        <img src="images/hareモデル３.jpg" alt="商品画像">
+        <button class="plus-btn view-more-trigger" data-product-set="2">
+          <span class="plus-icon">+</span>
+          <span class="plus-text">さらに見る</span>
+        </button>
+      </div>
+    </div>
+    <div class="image-top-right">
+      <img src="images/hareモデル１.jpg" alt="商品画像">
+      <button class="plus-btn view-more-trigger" data-product-set="3">
+        <span class="plus-icon">+</span>
+        <span class="plus-text">さらに見る</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== 商品詳細モーダル ===== -->
+  <div class="product-modal-overlay" id="productModalOverlay"></div>
+  <div class="product-modal" id="productModal">
+    <div class="product-modal-header">
+      <button class="product-modal-close" id="productModalClose">×</button>
+    </div>
+    <div class="product-modal-content" id="productModalContent">
+      <!-- 商品はJavaScriptで動的に挿入されます -->
+    </div>
+  </div>
+
+  <!-- ===== 商品セクション（3つ横並び） ===== -->
+  <section class="products-section">
+  <div class="products-container">
+    <div class="product-item">
+      <a href="syouhinn1.html" class="product-link">
+        <img src="images/hare1.png" alt="商品1" data-images='["images/hare1.png", "images/hare色違いデニム１.png", "images/hare色違いデニム３.png"]'>
+        <h2>ファイヤーマンバックルデニム</h2>
+        <p class="price">¥10,450</p>
+      </a>
+    </div>
+    <div class="product-item">
+      <a href="syouhinn1.html" class="product-link">
+        <img src="images/hare.png" alt="商品2" data-images='["images/hare.png", "images/hare色違いかー１.png", "images/hare色違いかー２.png"]'>
+        <h2>メタルボタンダマスクニット</h2>
+        <p class="price">¥12,000</p>
+      </a>
+    </div>
+    <div class="product-item">
+      <a href="syouhinn1.html" class="product-link">
+        <img src="images/hare5.png" alt="商品3" data-images='["images/hare5.png", "images/hare革ジャン色違い.png", "images/hare革ジャン色違い２.png"]'>
+        <h2>マルエリファーレザー</h2>
+        <p class="price">¥98,000</p>
+      </a>
+    </div>
+  </div>
+    <div class="products-section-button">
+      <a href="saranimiru.html" class="view-more-btn">さらに見る</a>
+    </div>
+  </section>
+  
+  <!-- ===== 画像セクション（左大・右小2つ） ===== -->
+  <section class="image-bottom-section">
+    <div class="image-bottom-left">
+    <img src="images/hareモデル５.jpg" alt="商品画像">
+    <button class="plus-btn view-more-trigger" data-product-set="4">
+      <span class="plus-icon">+</span>
+      <span class="plus-text">さらに見る</span>
+    </button>
+  </div>
+  <div class="image-bottom-right">
+    <div class="image-small-top">
+      <img src="images/99710617b_b_11_500.jpg" alt="商品画像">
+      <button class="plus-btn view-more-trigger" data-product-set="5">
+        <span class="plus-icon">+</span>
+        <span class="plus-text">さらに見る</span>
+      </button>
+    </div>
+    <div class="image-small-bottom">
+      <img src="images/hareモデル７.jpg" alt="商品画像">
+      <button class="plus-btn view-more-trigger" data-product-set="6">
+        <span class="plus-icon">+</span>
+        <span class="plus-text">さらに見る</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== 商品セクション（3つ横並び）その2 ===== -->
+  <section class="products-section-2">
+    <div class="products-container-2">
+    <div class="product-item-2">
+      <a href="syouhinn1.html" class="product-link">
+        <img src="images/hare6.png" alt="商品4" data-images='["images/hare6.png", "images/hareブルゾン色違い１.png", "images/hareブルゾン色違い２.png", "images/hareブルゾン色違い３.png"]'>
+        <h2>コンパクトファーブルゾン</h2>
+        <p class="price">¥19,800</p>
+      </a>
+    </div>
+    <div class="product-item-2">
+      <a href="syouhinn1.html" class="product-link">
+        <img src="images/hare7.png" alt="商品5" data-images='["images/hare7.png", "images/hare色違いセーター１.png", "images/hare色違いセーター２.png","images/hare色違いセーター３.png"]'>
+        <h2>ハイショクステッチニッポロ</h2>
+        <p class="price">¥6,930</p>
+      </a>
+    </div>
+    <div class="product-item-2">
+      <a href="syouhinn1.html" class="product-link">
+        <img src="images/hare14.png" alt="商品6" class="product-image-large" data-images='["images/hare14.png", "images/hare色違いニット１.png", "images/hare色違いニット２.png","images/hareニット色違い３.png","images/hare色違いニット４.png"]'>
+        <h2>ロゴモールニットポロ</h2>
+        <p class="price">¥6,930</p>
+      </a>
+    </div>
+  </div>
+    <div class="products-section-button">
+      <a href="saranimiru.html" class="view-more-btn">さらに見る</a>
+    </div>
+  </section>
+</section>
+
+
+<!-- ===== バーチャル試着セクション ===== -->
+<section class="virtual-tryon-section">
+  <h1 class="virtual-tryon-title">あなたもバーチャル試着しませんか</h1>
+  
+  <!-- 初期表示：ボタン -->
+  <div class="tryon-intro">
+    <button id="startTryon" class="tryon-start-btn">試す</button>
+    <div class="tryon-intro-image">
+      <img src="images/top.jpg" alt="バーチャル試着">
+    </div>
+  </div>
+  
+  <!-- 試着機能 最初は出さない -->
+  <div class="tryon-container" id="tryonContainer" style="display: none;">
+    <button id="closeTryon" class="tryon-close-btn">閉じる</button>
+    <div class="tryon-camera-area">
+      <div class="camera-wrapper">
+        <video id="cameraVideo" autoplay playsinline></video>
+        <canvas id="overlayCanvas"></canvas>
+        <div class="camera-controls">
+          <button id="startCamera" class="camera-btn">カメラを開始</button>
+          <button id="stopCamera" class="camera-btn" style="display: none;">カメラを停止</button>
+        </div>
+      </div>
+      
+      <div class="tryon-controls">
+        <div class="position-controls">
+          <label>位置調整</label>
+          <div class="control-group">
+            <label>X: <input type="range" id="posX" min="-200" max="200" value="0"></label>
+            <label>Y: <input type="range" id="posY" min="-200" max="200" value="0"></label>
+          </div>
+        </div>
+        <div class="size-controls">
+          <label>サイズ調整</label>
+          <input type="range" id="sizeScale" min="0.5" max="3.5" step="0.1" value="1">
+        </div>
+        <div class="rotation-controls">
+          <label>回転</label>
+          <input type="range" id="rotation" min="-180" max="180" value="0">
+        </div>
+      </div>
+    </div>
+    
+    <div class="tryon-product-selector">
+      <h2>試着する商品を選択</h2>
+      <div class="product-selector-grid">
+        <div class="selector-item" data-product="images/hare1.png">
+          <img src="images/hare1.png" alt="商品1">
+          <p>ファイヤーマンバックルデニム</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いデニム１.png">
+          <img src="images/hare色違いデニム１.png" alt="商品1-色違い1">
+          <p>レッド系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いデニム３.png">
+          <img src="images/hare色違いデニム３.png" alt="商品1-色違い3">
+          <p>ブルー系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare.png">
+          <img src="images/hare.png" alt="商品2">
+          <p>メタルボタンダマスクニット</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いかー１.png">
+          <img src="images/hare色違いかー１.png" alt="商品2-色違い1">
+          <p>グレー15</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いかー２.png">
+          <img src="images/hare色違いかー２.png" alt="商品2-色違い2">
+          <p>グリーン75</p>
+        </div>
+        <div class="selector-item" data-product="images/hare5.png">
+          <img src="images/hare5.png" alt="商品3">
+          <p>マルエリファーレザーブルゾン</p>
+        </div>
+        <div class="selector-item" data-product="images/hare革ジャン色違い.png">
+          <img src="images/hare革ジャン色違い.png" alt="商品3-色違い1">
+          <p>グレー系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare革ジャン色違い２.png">
+          <img src="images/hare革ジャン色違い２.png" alt="商品3-色違い2">
+          <p>ブラウン系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare6.png">
+          <img src="images/hare6.png" alt="商品4">
+          <p>コンパクトファーブルゾン</p>
+        </div>
+        <div class="selector-item" data-product="images/hareブルゾン色違い１.png">
+          <img src="images/hareブルゾン色違い１.png" alt="商品4-色違い1">
+          <p>ブラック系</p>
+        </div>
+        <div class="selector-item" data-product="images/hareブルゾン色違い２.png">
+          <img src="images/hareブルゾン色違い２.png" alt="商品4-色違い2">
+          <p>グレー系</p>
+        </div>
+        <div class="selector-item" data-product="images/hareブルゾン色違い３.png">
+          <img src="images/hareブルゾン色違い３.png" alt="商品4-色違い3">
+          <p>パープル系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare7.png">
+          <img src="images/hare7.png" alt="商品5">
+          <p>ハイショクステッチニッポロ</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いセーター１.png">
+          <img src="images/hare色違いセーター１.png" alt="商品5-色違い1">
+          <p>アイボリー系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いセーター２.png">
+          <img src="images/hare色違いセーター２.png" alt="商品5-色違い2">
+          <p>ブラウン系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いセーター３.png">
+          <img src="images/hare色違いセーター３.png" alt="商品5-色違い3">
+          <p>ブルー系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare14.png">
+          <img src="images/hare14.png" alt="商品6">
+          <p>ロゴモールニットポロ</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いニット１.png">
+          <img src="images/hare色違いニット１.png" alt="商品6-色違い1">
+          <p>ブラック系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いニット２.png">
+          <img src="images/hare色違いニット２.png" alt="商品6-色違い2">
+          <p>ブルー系</p>
+        </div>
+        <div class="selector-item" data-product="images/hareニット色違い３.png">
+          <img src="images/hareニット色違い３.png" alt="商品6-色違い3">
+          <p>レッド系</p>
+        </div>
+        <div class="selector-item" data-product="images/hare色違いニット４.png">
+          <img src="images/hare色違いニット４.png" alt="商品6-色違い4">
+          <p>オレンジ系</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== パンツセクション ===== -->
+<section class="outer-section">
+  <h1 class="outer-title">パンツ</h1>
+  <p class="outer-description">日常にさりげないおしゃれと快適さをプラスし、自然体で楽しめる毎日を</p>
+  
+  <!-- ===== 画像セクション（左右配置） ===== -->
+  <section class="image-top-section">
+    <h2>      </h2>
+    <div class="image-top-left-wrapper">
+      <div class="image-top-left-1">
+        <img src="images/パンツ色違い.jpg" alt="商品画像">
+        <button class="plus-btn view-more-trigger" data-product-set="7">
+          <span class="plus-icon">+</span>
+          <span class="plus-text">さらに見る</span>
+        </button>
+      </div>
+      <div class="image-top-left-2">
+        <img src="images/グラで二.webp" alt="商品画像">
+        <button class="plus-btn view-more-trigger" data-product-set="8">
+          <span class="plus-icon">+</span>
+          <span class="plus-text">さらに見る</span>
+        </button>
+      </div>
+    </div>
+    <div class="image-top-right">
+      <img src="images/デニム色違い４.jpg" alt="商品画像">
+      <button class="plus-btn view-more-trigger" data-product-set="9">
+        <span class="plus-icon">+</span>
+        <span class="plus-text">さらに見る</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== 商品セクション（3つ横並び） ===== -->
+  <section class="products-section">
+    <h2>  </h2>
+    <div class="products-container">
+      <div class="product-item">
+        <a href="syouhinn1.html" class="product-link">
+          <img src="images/パンツ色違い.png" alt="商品1" data-images='["images/パンツ色違い.png", "images/パンツ色違い１.png", "images/パンツ色違い３.png"]'>
+          <h2>2WAYベルトカーゴパンツ</h2>
+          <p class="price">¥7,700</p>
+        </a>
+      </div>
+      <div class="product-item">
+        <a href="syouhinn1.html" class="product-link">
+          <img src="images/デニム色違い1.png" alt="商品2" data-images='["images/デニム色違い1.png", "images/デニム色違い3.png", "images/デニムブラウンjpg.png","images/デニムライトグレーjpg.png"]'>
+          <h2>ヴィンテージカコウデニムパンツ</h2>
+          <p class="price">¥9,900</p>
+        </a>
+      </div>
+      <div class="product-item">
+        <a href="syouhinn1.html" class="product-link">
+          <img src="images/hare12.png" alt="商品3" data-images='["images/hare12.png", "images/ぐらでに色違い１.png"]'>
+          <h2>グラデーションハクプリントパンツ</h2>
+          <p class="price">¥13,200</p>
+        </a>
+      </div>
+    </div>
+    <div class="products-section-button">
+      <a href="saranimiru.html" class="view-more-btn">さらに見る</a>
+    </div>
+  </section>
+</section>
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <nav class="footer-nav">
+    <a href="index.html">会社概要</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">ニュース</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">店舗情報</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">採用情報</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">当サイトのポリシー</a>
+    <span class="footer-divider">|</span>
+    <a href="herupu.html">お問い合わせ</a>
+  </nav>
+  
+  <div class="footer-logo">
+    <p class="footer-logo-text">ZERO</p>
+    <p class="footer-logo-subtitle">Japan 2026</p>
+  </div>
+  
+  <div class="footer-description">
+    <p>「ZERO」は日本で誕生した、プレミアムファッションブランドです。<br>
+    2025年の創業以来、世界中へファッションの美しさと幸せな時をお届けしています。</p>
+  </div>
+  
+  <div class="footer-social">
+    <a href="#" class="social-icon" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+        <circle cx="17" cy="7" r="1" fill="currentColor"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="X">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="Facebook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="YouTube">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    </a>
+  </div>
+  
+  <div class="footer-apps">
+    <a href="#" class="app-badge">
+      <div class="app-badge-content">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
+          <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.1 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-1.23.56-2.5 1.45-3.3 1.06-1.12 2.77-1.89 4.08-1.78.31 2.35-1.19 4.65-2.95 5.66-.88.5-1.96.74-2.58-.58z"/>
+        </svg>
+        <div class="app-badge-text">
+          <span class="app-badge-label">からダウンロード</span>
+          <span class="app-badge-name">App Store</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="app-badge">
+      <div class="app-badge-content">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
+          <path d="M3.111 1.5h13.778c.89 0 1.611.72 1.611 1.611v17.778c0 .89-.72 1.611-1.611 1.611H3.111c-.89 0-1.611-.72-1.611-1.611V3.111c0-.89.72-1.611 1.611-1.611zm0 1.611v17.778h13.778V3.111H3.111zm2.222 2.222h9.334v1.611H5.333V5.333zm0 3.222h9.334v8.89H5.333v-8.89z"/>
+        </svg>
+        <div class="app-badge-text">
+          <span class="app-badge-label">で手に入れよう</span>
+          <span class="app-badge-name">Google Play</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</footer>
+
+<div class="camera-permission-modal" id="cameraPermissionModal" aria-hidden="true">
+  <div class="camera-permission-overlay" id="cameraPermissionOverlay"></div>
+  <div class="camera-permission-content" role="dialog" aria-labelledby="cameraPermissionTitle" aria-modal="true">
+    <p class="camera-permission-title" id="cameraPermissionTitle">カメラの許可が必要です</p>
+    <p class="camera-permission-message" id="cameraPermissionMessage">
+      カメラへのアクセスが拒否されました。ブラウザの設定でカメラの許可を確認してください。
+    </p>
+    <div class="camera-permission-actions">
+      <button class="camera-permission-close" id="cameraPermissionClose">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

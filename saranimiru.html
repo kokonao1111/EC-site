@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ZERO - メンズ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cursor-follower.js" defer></script>
+  <script src="loader.js" defer></script>
+</head>
+<body class="cart-page-body">
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-circle">
+      <span>100</span>
+    </div>
+  </div>
+  <div class="page-transition" id="pageTransition">
+    <div class="page-transition-bg"></div>
+    <div class="page-transition-text">ZERO</div>
+  </div>
+
+<!-- ===== ヘッダー ===== -->
+<header class="header">
+  <div class="menu-icon" id="menuToggle">
+    <span></span><span></span><span></span>
+  </div>
+  <a href="index.html" class="logo">ZERO</a>
+
+  <div class="header-right">
+    <div class="search">
+      <label for="search-input">検索</label>
+      <input type="text" id="search-input">
+    </div>
+    <nav class="nav-links">
+      <a href="mai.html">マイアカウント</a>
+      <a href="herupu.html">ヘルプ</a>
+      <a href="kaimono.html">買い物かご [0]</a>
+      <a href="okiniiri.html">お気に入り</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== モーダルメニュー ===== -->
+<div class="modal-menu" id="modalMenu">
+  <div class="modal-menu-header">
+    <div class="modal-menu-close">
+      <button class="close-btn" id="closeMenu">×</button>
+    </div>
+  </div>
+  
+  <nav class="modal-menu-nav">
+    <a href="index.html">NEWS</a>
+    <a href="index.html">COLLECTION</a>
+    <a href="HAL_ZERO.html">ABOUT</a>
+    <a href="HAL_ZERO2.html">STORES</a>
+    <a href="saranimiru.html">ONLINE STORE <span class="external-icon">↗</span></a>
+  </nav>
+  
+  <div class="modal-menu-footer">
+    <div class="modal-social">
+      <a href="#">INSTAGRAM</a>
+      <a href="#">TWITTER</a>
+      <a href="#">TIKTOK</a>
+    </div>
+    <div class="modal-links">
+      <a href="#">CONTACT</a>
+      <span>/</span>
+      <a href="#">PRIVACY POLICY</a>
+    </div>
+    <div class="modal-copyright">
+      <p>Copyright ©ZERO Co., Ltd.</p>
+      <p>All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 商品一覧ページ ===== -->
+<div class="product-listing-page">
+  <div class="product-listing-header">
+    <h1 class="page-title">メンズ</h1>
+    
+    <div class="filter-bar">
+      <div class="filter-options">
+        <div class="filter-dropdown">
+          <button class="filter-btn" data-filter="filter">フィルター <span>▼</span></button>
+          <div class="dropdown-menu" id="filter-menu">
+            <label><input type="checkbox" value="new"> 新着</label>
+            <label><input type="checkbox" value="sale"> セール</label>
+            <label><input type="checkbox" value="popular"> 人気</label>
+          </div>
+        </div>
+        <div class="filter-dropdown">
+          <button class="filter-btn" data-filter="category">カテゴリ <span>▼</span></button>
+          <div class="dropdown-menu" id="category-menu">
+            <label><input type="checkbox" value="tops"> トップス</label>
+            <label><input type="checkbox" value="bottoms"> ボトムス</label>
+            <label><input type="checkbox" value="outer"> アウター</label>
+            <label><input type="checkbox" value="accessories"> アクセサリー</label>
+            <label><input type="checkbox" value="shoes"> シューズ</label>
+          </div>
+        </div>
+        <div class="filter-dropdown">
+          <button class="filter-btn" data-filter="size">サイズ <span>▼</span></button>
+          <div class="dropdown-menu" id="size-menu">
+            <label><input type="checkbox" value="S"> S</label>
+            <label><input type="checkbox" value="M"> M</label>
+            <label><input type="checkbox" value="L"> L</label>
+            <label><input type="checkbox" value="XL"> XL</label>
+            <label><input type="checkbox" value="XXL"> XXL</label>
+          </div>
+        </div>
+        <div class="filter-dropdown">
+          <button class="filter-btn" data-filter="price">価格 <span>▼</span></button>
+          <div class="dropdown-menu" id="price-menu">
+            <label><input type="checkbox" value="0-5000"> ¥0 - ¥5,000</label>
+            <label><input type="checkbox" value="5000-10000"> ¥5,000 - ¥10,000</label>
+            <label><input type="checkbox" value="10000-20000"> ¥10,000 - ¥20,000</label>
+            <label><input type="checkbox" value="20000-"> ¥20,000以上</label>
+          </div>
+        </div>
+        <div class="filter-dropdown">
+          <button class="filter-btn" data-filter="color">カラー <span>▼</span></button>
+          <div class="dropdown-menu" id="color-menu">
+            <label><input type="checkbox" value="black"> ブラック</label>
+            <label><input type="checkbox" value="white"> ホワイト</label>
+            <label><input type="checkbox" value="blue"> ブルー</label>
+            <label><input type="checkbox" value="brown"> ブラウン</label>
+            <label><input type="checkbox" value="gray"> グレー</label>
+            <label><input type="checkbox" value="red"> レッド</label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="active-filters">
+        <span class="active-filter">
+          メンズ
+          <button class="remove-filter">×</button>
+        </span>
+        <button class="clear-filters">フィルターをクリア</button>
+      </div>
+      
+      <div class="sort-section">
+        <div class="item-count">11 アイテム</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="product-grid">
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare1.png" alt="ファイヤーマンバックルデニム" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #1e3a8a;"></span>
+          <span class="color-swatch" style="background-color: #d4a574;"></span>
+          <span class="color-swatch" style="background-color: #222;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">ファイヤーマンバックルデニム</h2>
+          <p class="product-price">¥10,450</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare5.png" alt="マルエリファーレザー" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #1e3a8a;"></span>
+          <span class="color-swatch" style="background-color: #d4a574;"></span>
+          <span class="color-swatch" style="background-color: #222;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">マルエリファーレザー</h2>
+          <p class="product-price">¥98,000</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare2.png" alt="2WAYベルトカーゴパンツ" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #222;"></span>
+          <span class="color-swatch" style="background-color: #9ca3af;"></span>
+          <span class="color-swatch" style="background-color: #d4a574;"></span>
+          <span class="color-swatch" style="background-color: #1e3a8a;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">2WAYベルトカーゴパンツ</h2>
+          <p class="product-price">¥7,700</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare3.png" alt="メタルボタンダマスクニット" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #222;"></span>
+          <span class="color-swatch" style="background-color: #d4a574;"></span>
+          <span class="color-swatch" style="background-color: #1e3a8a;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">メタルボタンダマスクニット</h2>
+          <p class="product-price">¥8,932</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare4.png" alt="コンパクトファーブルゾン" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #222;"></span>
+          <span class="color-swatch" style="background-color: #9ca3af;"></span>
+          <span class="color-swatch" style="background-color: #d4a574;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">コンパクトファーブルゾン</h2>
+          <p class="product-price">¥5,720</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare6.png" alt="コンパクトファーブルゾン" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #ff6b35;"></span>
+          <span class="color-swatch" style="background-color: #222;"></span>
+          <span class="color-swatch" style="background-color: #9ca3af;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">コンパクトファーブルゾン</h2>
+          <p class="product-price">¥19,800</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare7.png" alt="ハイショクステッチニッポロ" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #222;"></span>
+          <span class="color-swatch" style="background-color: #f5f5dc;"></span>
+          <span class="color-swatch" style="background-color: #8b4513;"></span>
+          <span class="color-swatch" style="background-color: #1e3a8a;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">ハイショクステッチニッポロ</h2>
+          <p class="product-price">¥6,930</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare8.png" alt="ロゴモールニットポロ" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #222;"></span>
+          <span class="color-swatch" style="background-color: #9ca3af;"></span>
+          <span class="color-swatch" style="background-color: #d4a574;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">ロゴモールニットポロ</h2>
+          <p class="product-price">¥8,910</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare11.png" alt="ヴィンテージカコウデニムパンツ" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #1e3a8a;"></span>
+          <span class="color-swatch" style="background-color: #c0c0c0;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">ヴィンテージカコウデニムパンツ</h2>
+          <p class="product-price">¥9,900</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare12.png" alt="グラデーションハクプリントパンツ" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #1e3a8a;"></span>
+          <span class="color-swatch" style="background-color: #222;"></span>
+          <span class="color-swatch" style="background-color: #fff;"></span>
+          <span class="color-swatch" style="background-color: #8b4513;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">グラデーションハクプリントパンツ</h2>
+          <p class="product-price">¥13,200</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="syouhinn1.html" class="product-card-link">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="images/hare14.png" alt="ロゴモールニットポロ" class="product-image">
+          <button class="product-quick-action" onclick="event.preventDefault(); event.stopPropagation();">
+            <span class="heart-icon">♡</span>
+            <span class="plus-icon">+</span>
+          </button>
+        </div>
+        <div class="product-color-options">
+          <span class="color-swatch" style="background-color: #9ca3af;"></span>
+          <span class="color-swatch" style="background-color: #222;"></span>
+          <span class="color-swatch" style="background-color: #1e3a8a;"></span>
+          <span class="color-swatch" style="background-color: #dc2626;"></span>
+          <span class="color-swatch" style="background-color: #ff6b35;"></span>
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">ロゴモールニットポロ</h2>
+          <p class="product-price">¥6,930</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ===== フッター ===== -->
+<footer class="footer">
+  <nav class="footer-nav">
+    <a href="index.html">会社概要</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">ニュース</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">店舗情報</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">採用情報</a>
+    <span class="footer-divider">|</span>
+    <a href="index.html">当サイトのポリシー</a>
+    <span class="footer-divider">|</span>
+    <a href="herupu.html">お問い合わせ</a>
+  </nav>
+  
+  <div class="footer-logo">
+    <p class="footer-logo-text">ZERO</p>
+    <p class="footer-logo-subtitle">Japan 2026</p>
+  </div>
+  
+  <div class="footer-description">
+    <p>「ZERO」は日本で誕生した、プレミアムファッションブランドです。<br>
+    2025年の創業以来、世界中へファッションの美しさと幸せな時をお届けしています。</p>
+  </div>
+  
+  <div class="footer-social">
+    <a href="#" class="social-icon" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none"/>
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+        <circle cx="17" cy="7" r="1" fill="currentColor"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="X">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="Facebook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+    <a href="#" class="social-icon" aria-label="YouTube">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+    </a>
+  </div>
+  
+  <div class="footer-apps">
+    <a href="#" class="app-badge">
+      <div class="app-badge-content">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
+          <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.1 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-1.23.56-2.5 1.45-3.3 1.06-1.12 2.77-1.89 4.08-1.78.31 2.35-1.19 4.65-2.95 5.66-.88.5-1.96.74-2.58-.58z"/>
+        </svg>
+        <div class="app-badge-text">
+          <span class="app-badge-label">からダウンロード</span>
+          <span class="app-badge-name">App Store</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="app-badge">
+      <div class="app-badge-content">
+        <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor">
+          <path d="M3.111 1.5h13.778c.89 0 1.611.72 1.611 1.611v17.778c0 .89-.72 1.611-1.611 1.611H3.111c-.89 0-1.611-.72-1.611-1.611V3.111c0-.89.72-1.611 1.611-1.611zm0 1.611v17.778h13.778V3.111H3.111zm2.222 2.222h9.334v1.611H5.333V5.333zm0 3.222h9.334v8.89H5.333v-8.89z"/>
+        </svg>
+        <div class="app-badge-text">
+          <span class="app-badge-label">で手に入れよう</span>
+          <span class="app-badge-name">Google Play</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // フィルタードロップダウンの機能
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+    
+    // 各フィルターボタンにクリックイベントを追加
+    filterButtons.forEach((button, index) => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const dropdown = button.nextElementSibling;
+        
+        // 他のドロップダウンを閉じる
+        dropdownMenus.forEach(menu => {
+          if (menu !== dropdown) {
+            menu.classList.remove('active');
+          }
+        });
+        
+        // 現在のドロップダウンを開閉
+        dropdown.classList.toggle('active');
+        
+        // 矢印の向きを変更
+        const span = button.querySelector('span');
+        if (dropdown.classList.contains('active')) {
+          span.textContent = '▲';
+        } else {
+          span.textContent = '▼';
+        }
+      });
+    });
+    
+    // ドキュメントの他の部分をクリックしたらドロップダウンを閉じる
+    document.addEventListener('click', () => {
+      dropdownMenus.forEach(menu => {
+        menu.classList.remove('active');
+      });
+      filterButtons.forEach(button => {
+        const span = button.querySelector('span');
+        span.textContent = '▼';
+      });
+    });
+    
+    // ドロップダウン内のクリックは伝播を止める
+    dropdownMenus.forEach(menu => {
+      menu.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    });
+    
+    // フィルターをクリアボタン
+    const clearFiltersBtn = document.querySelector('.clear-filters');
+    if (clearFiltersBtn) {
+      clearFiltersBtn.addEventListener('click', () => {
+        // すべてのチェックボックスをクリア
+        document.querySelectorAll('.dropdown-menu input[type="checkbox"]').forEach(checkbox => {
+          checkbox.checked = false;
+        });
+        // すべてのアクティブフィルターをクリア（メンズも含む）
+        const activeFilters = document.querySelectorAll('.active-filter');
+        activeFilters.forEach(filter => {
+          filter.remove();
+        });
+        // ページタイトルも非表示にする
+        const pageTitle = document.querySelector('.page-title');
+        const filterBar = document.querySelector('.filter-bar');
+        if (pageTitle) {
+          pageTitle.style.display = 'none';
+        }
+        if (filterBar) {
+          filterBar.style.marginTop = '30px';
+        }
+      });
+    }
+    
+    // フィルター削除ボタン
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('remove-filter')) {
+        const activeFilter = e.target.closest('.active-filter');
+        const filterText = activeFilter.textContent.trim();
+        
+        // メンズが削除された場合、ページタイトルも非表示にする
+        if (filterText.includes('メンズ')) {
+          const pageTitle = document.querySelector('.page-title');
+          const filterBar = document.querySelector('.filter-bar');
+          if (pageTitle) {
+            pageTitle.style.display = 'none';
+          }
+          if (filterBar) {
+            filterBar.style.marginTop = '30px';
+          }
+        }
+        
+        activeFilter.remove();
+      }
+    });
+    
+    // ハートボタンでお気に入りに追加
+    const favoriteToast = document.getElementById('favoriteToast');
+    const showFavoriteToast = (message) => {
+      if (!favoriteToast) return;
+      favoriteToast.textContent = message;
+      favoriteToast.classList.add('active');
+      clearTimeout(favoriteToast._timer);
+      favoriteToast._timer = setTimeout(() => {
+        favoriteToast.classList.remove('active');
+      }, 1600);
+    };
+
+    document.querySelectorAll('.product-quick-action').forEach(button => {
+      const heartIcon = button.querySelector('.heart-icon');
+      if (heartIcon) {
+        heartIcon.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // 商品情報を取得
+          const productCard = button.closest('.product-card');
+          const productLink = button.closest('.product-card-link');
+          const productImage = productCard.querySelector('.product-image');
+          const productName = productCard.querySelector('.product-name');
+          const productPrice = productCard.querySelector('.product-price');
+          
+          // 価格を数値に変換（¥とカンマを除去）
+          let price = 0;
+          if (productPrice) {
+            const priceText = productPrice.textContent.replace(/[¥,]/g, '');
+            price = parseInt(priceText) || 0;
+          }
+          
+          const productData = {
+            image: productImage ? productImage.src : '',
+            name: productName ? productName.textContent : '商品名不明',
+            price: price,
+            link: productLink ? productLink.href : 'syouhinn1.html'
+          };
+          
+          // お気に入りを読み込む
+          const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+          
+          // 既に追加されているかチェック
+          const isAlreadyFavorite = favorites.some(item => 
+            item.name === productData.name && item.image === productData.image
+          );
+          
+          if (isAlreadyFavorite) {
+            // 既に追加されている場合は削除
+            const newFavorites = favorites.filter(item => 
+              !(item.name === productData.name && item.image === productData.image)
+            );
+            localStorage.setItem('favorites', JSON.stringify(newFavorites));
+            heartIcon.textContent = '♥';
+            heartIcon.classList.remove('is-filled');
+            showFavoriteToast('お気に入りから削除しました');
+          } else {
+            // お気に入りに追加
+            favorites.push(productData);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            heartIcon.textContent = '♥';
+            heartIcon.classList.add('is-filled');
+            showFavoriteToast('お気に入りに追加しました');
+          }
+        });
+      }
+    });
+    
+    // ページ読み込み時にお気に入り状態を確認
+    document.querySelectorAll('.product-quick-action').forEach(button => {
+      const heartIcon = button.querySelector('.heart-icon');
+      if (heartIcon) {
+        const productCard = button.closest('.product-card');
+        const productImage = productCard.querySelector('.product-image');
+        const productName = productCard.querySelector('.product-name');
+        
+        const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        const isFavorite = favorites.some(item => 
+          item.name === productName.textContent && item.image === productImage.src
+        );
+        
+        heartIcon.textContent = '♥';
+        if (isFavorite) {
+          heartIcon.classList.add('is-filled');
+        } else {
+          heartIcon.classList.remove('is-filled');
+        }
+      }
+    });
+  });
+</script>
+<div class="favorite-toast" id="favoriteToast"></div>
+</body>
+</html>

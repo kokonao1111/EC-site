@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ZERO - ログインまたは登録</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cursor-follower.js" defer></script>
+  <script src="loader.js" defer></script>
+  <script src="mai.js" defer></script>
+</head>
+<body>
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-circle">
+      <span>100</span>
+    </div>
+  </div>
+  <div class="page-transition" id="pageTransition">
+    <div class="page-transition-bg"></div>
+    <div class="page-transition-text">ZERO</div>
+  </div>
+  <div class="login-page">
+    <a href="index.html" class="login-logo">ZERO</a>
+    
+    <div class="login-left">
+      <h1 class="login-title">ログインまたは登録する</h1>
+      
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="email">メールアドレス</label>
+          <input type="email" id="email" class="form-input" placeholder="" required>
+          <div class="error-message" id="emailError"></div>
+        </div>
+        
+        <button type="submit" class="continue-btn">続行</button>
+      </form>
+      
+      <div class="success-message" id="successMessage" style="display: none;">
+        <p>登録が完了しました！</p>
+      </div>
+      
+      <div class="social-section">
+        <p class="social-text">
+          ソーシャルログインでログインすることにより、<a href="#">プライバシーポリシー</a>に準じて<a href="#">アカウントをリンクすることに同意します</a>。
+        </p>
+        
+        <div class="social-buttons">
+          <button type="button" class="social-btn">
+            <div class="google-icon">
+              <span>G</span>
+            </div>
+            <span>GOOGLEで続行</span>
+          </button>
+          
+          <button type="button" class="social-btn">
+            <div class="apple-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.1 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-1.23.56-2.5 1.45-3.3 1.06-1.12 2.77-1.89 4.08-1.78.31 2.35-1.19 4.65-2.95 5.66-.88.5-1.96.74-2.58-.58z"/>
+              </svg>
+            </div>
+            <span>APPLEで続行</span>
+          </button>
+        </div>
+      </div>
+      
+      <a href="herupu.html" class="help-link">ヘルプ</a>
+    </div>
+    
+    <div class="login-right"></div>
+  </div>
+
+  <!-- ===== ソーシャルログイン案内モーダル ===== -->
+  <div class="social-login-modal" id="socialLoginModal">
+    <div class="social-login-overlay" id="socialLoginOverlay"></div>
+    <div class="social-login-content">
+      <p>ソーシャルログイン機能は現在開発中です。メールアドレスで登録してください。</p>
+      <button type="button" class="social-login-close" id="socialLoginClose">閉じる</button>
+    </div>
+  </div>
+  
+</body>
+</html>
+
