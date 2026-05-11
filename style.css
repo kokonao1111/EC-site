@@ -6248,3 +6248,47 @@ h5.shopping-title {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* =============================================
+   横スクロール原因修正
+   ============================================= */
+
+/* --- 修正1: ヘッダー ---
+   width:100% + padding:20px がbox-sizing:content-boxで
+   390 + 40 = 430px になる → border-boxで正確に100%に収める
+   PC版への影響なし（fixed要素のborder-box化は安全）
+   -------------------------------------------------------- */
+.header {
+  box-sizing: border-box;
+}
+
+/* --- 修正2: カルーセル横スクロール防止 ---
+   既存の @media(max-width:768px) で .carousel{overflow:visible} に
+   なっているため、カルーセルトラック全体(1646px)がページ幅を押し広げる。
+   .collection に overflow-x:hidden を当ててセクション境界でクリップする。
+   -------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .collection {
+    overflow-x: hidden;
+  }
+}
+
+/* --- 修正3: スマホでのbox-sizing修正 ---
+   padding指定のある要素が width:100% + padding でビューポートを超えている。
+   対象: modal-menu / outer-section / image-top/bottom-section
+   PC版は1024px以上なので影響なし。
+   -------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .modal-menu,
+  .outer-section,
+  .image-top-section,
+  .image-bottom-section,
+  .products-section,
+  .products-section-2,
+  .photo-section,
+  .syouhinn,
+  .virtual-tryon-section,
+  .collection {
+    box-sizing: border-box;
+  }
+}
