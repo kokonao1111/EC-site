@@ -5914,3 +5914,337 @@ h5.shopping-title {
 .plus-icon {
     height: 30px;
 }
+
+/* =============================================
+   レスポンシブ補完
+   ============================================= */
+
+/* ===== タブレット (768px〜1023px) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  /* ロゴサイズ縮小 */
+  .logo {
+    font-size: 80px;
+    left: 80px;
+  }
+
+  /* ヘッダー右ナビをタブレットでも非表示 */
+  .header-right {
+    display: none;
+  }
+
+  /* alt-headerのヘッダー右もタブレットで非表示 */
+  .header.alt-header .header-right {
+    display: none;
+  }
+
+  /* アウターセクション余白縮小 */
+  .outer-section {
+    padding: 80px 24px 40px;
+  }
+
+  /* image-top/bottom-section: オフセット解除・余白縮小 */
+  .image-top-section,
+  .image-bottom-section {
+    gap: 40px;
+    padding: 40px 24px 80px;
+    transform: none;
+  }
+
+  /* 商品3列: 横並び維持・gap縮小 */
+  .products-container,
+  .products-container-2 {
+    gap: 20px;
+    padding: 0;
+  }
+
+  /* 商品カード最大幅緩和 */
+  .product-item,
+  .product-item-2 {
+    max-width: none;
+  }
+
+  /* product-image-large scale はそのままだと狭い画面でカードを超えるため縮小 */
+  .products-container-2 .product-image-large {
+    transform: scale(1.1) !important;
+  }
+
+  /* products-section 余白調整 */
+  .products-section,
+  .products-section-2 {
+    padding: 60px 24px;
+  }
+
+  /* コンタクトページ: 300px左パディングを除去 */
+  .contact-grid {
+    padding: 0 24px;
+  }
+  .contact-page {
+    padding: 100px 40px 60px;
+  }
+
+  /* カートページ */
+  .cart-page {
+    padding: 100px 40px 60px;
+  }
+
+  /* 商品詳細ページ: タブレットで縦積み */
+  .product-page {
+    flex-direction: column;
+    padding: 100px 40px 60px;
+  }
+  .product-left-column {
+    width: 100%;
+  }
+  .product-images-section {
+    transform: none;
+    flex-direction: column;
+  }
+  .product-thumbnails {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    margin-left: 0;
+  }
+  .product-main-image-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+  .product-info-section {
+    width: 100% !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    transform: none;
+  }
+
+  /* HAL ZEROモデル画像: 3列 → 2列 */
+  .hal-models-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .hal-models-section {
+    padding: 60px 40px;
+  }
+}
+
+/* ===== スマホ補完 (〜767px) ===== */
+@media (max-width: 767px) {
+
+  /* ロゴ: スマホ幅に合わせてサイズ・位置調整 (hamburger 40px + padding 20px = 60px を避ける) */
+  .logo {
+    font-size: 52px;
+    left: 68px;
+    top: 16px;
+  }
+
+  /* モーダルメニュー: 余白縮小 */
+  .modal-menu {
+    padding: 20px 20px 24px;
+  }
+  .modal-menu-nav {
+    gap: 16px;
+  }
+  .modal-menu-nav a {
+    font-size: 32px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ヒーロー動画: 高さをスマホに最適化 */
+  .hero,
+  .video-bg {
+    min-height: 55vh;
+  }
+
+  /* キャプション */
+  .caption {
+    bottom: 8%;
+    right: 5%;
+  }
+  .caption h1 {
+    font-size: 22px;
+  }
+  .caption h2 {
+    font-size: 22px;
+  }
+  .caption p {
+    font-size: 12px;
+  }
+
+  /* フォトセクション: section全体もoverfowをhiddenに */
+  .photo-section {
+    padding: 60px 0;
+    gap: 40px;
+    overflow: hidden;
+  }
+
+  /* GIF(商品スライド)セクション */
+  .syouhinn {
+    padding: 60px 16px;
+    gap: 0;
+  }
+  .syouhinn img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* コレクションタイトル */
+  .collection-title {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  /* カルーセルアイテムをスマホ幅に縮小 */
+  .item {
+    flex: 0 0 170px;
+    margin: 0 8px;
+  }
+  .item a,
+  .item img {
+    height: 210px;
+  }
+
+  /* アウターセクション */
+  .outer-title {
+    font-size: 22px;
+  }
+  .outer-description {
+    font-size: 14px;
+  }
+
+  /* products-section 内パディング */
+  .products-section,
+  .products-section-2 {
+    padding: 40px 16px;
+  }
+
+  /* 商品コンテナのパディング */
+  .products-container,
+  .products-container-2 {
+    padding: 0;
+  }
+
+  /* 商品カードの最大幅解除 */
+  .product-item,
+  .product-item-2 {
+    max-width: 100%;
+  }
+
+  /* product-image-large の scale(1.23) をスマホでリセット */
+  .products-container-2 .product-image-large {
+    transform: none !important;
+  }
+
+  /* product-item-2 の固定高さ解除 */
+  .product-item-2 img {
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+  }
+
+  /* さらに見るボタン */
+  .products-section-button {
+    padding: 16px 0 0;
+    text-align: center;
+  }
+
+  /* バーチャル試着セクション */
+  .virtual-tryon-section {
+    padding: 60px 16px;
+  }
+  .tryon-intro-image img {
+    width: 100%;
+    height: auto;
+  }
+  .tryon-start-btn {
+    padding: 14px 40px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+  .tryon-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .tryon-product-selector {
+    min-width: 0;
+    width: 100%;
+  }
+  .product-selector-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  /* HAL ZEROモデル画像: 1列 */
+  .hal-models-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .hal-models-section {
+    padding: 40px 16px;
+  }
+
+  /* HAL ZEROヒーロー */
+  .hal-hero-image {
+    height: 50vh;
+  }
+  .hal-zero-page.hal-zero-white .hal-hero-image,
+  .hal-zero2-page .hal-hero-image {
+    height: 40vh;
+    margin-top: 50px;
+  }
+
+  /* フッター */
+  .footer {
+    padding: 40px 20px 28px;
+  }
+  .footer-nav {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .footer-nav a {
+    font-size: 11px;
+  }
+  .footer-logo-text {
+    font-size: 36px;
+  }
+  .footer-description {
+    font-size: 13px;
+  }
+  .footer-apps {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+/* ===== 極小スマホ補完 (〜374px) ===== */
+@media (max-width: 374px) {
+
+  .logo {
+    font-size: 42px;
+    left: 62px;
+  }
+
+  .modal-menu-nav a {
+    font-size: 26px;
+  }
+
+  .item {
+    flex: 0 0 145px;
+  }
+  .item a,
+  .item img {
+    height: 180px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-divider {
+    display: none;
+  }
+
+  .product-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
